@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Markup API Doc</title>
+  </head>
+  <body>
+    <div class="clearfix" id="header">
+      <span class="active" id="app-name">
+        <a href="#">New World Coordinates - Markup Database API Doc</a>
+      </span>
+      <span id="api-version">Updated at: 2019-04-27 18:00:00 PST</span>
+    </div>
+    <div class="clearfix" id="wrapper">
+      <div class="blue" id="resource_index">
+        <h3>Resources</h3>
+        <ul id="api-navigation">
+          <!-- Projects -->
+          <li>
+            <span class="api-endpoint-container">
+              <a class="api-endpoint" href="#project_method_1">
+                GET /v1/projects
+              </a>
+            </span>
+          </li>
+          <li>
+            <span class="api-endpoint-container">
+              <a class="api-endpoint" href="#project_method_2">
+                POST /v1/project
+              </a>
+            </span>
+          </li>
+          <!-- Versions -->
+          <li>
+            <span class="api-endpoint-container">
+              <a class="api-endpoint" href="#version_method_1">
+                GET /v1/versions
+              </a>
+            </span>
+          </li>
+          <li>
+            <span class="api-endpoint-container">
+              <a class="api-endpoint" href="#version_method_2">
+                POST /v1/version
+              </a>
+            </span>
+          </li>
+          <!-- Markups -->
+          <li>
+            <span class="api-endpoint-container">
+              <a class="api-endpoint" href="#markup_method_1">
+                POST /v1/markups
+              </a>
+            </span>
+          </li>
+          <li>
+            <span class="api-endpoint-container">
+              <a class="api-endpoint" href="#markup_method_2">
+                POST /v1/markup
+              </a>
+            </span>
+          </li>
+          <li>
+            <span class="api-endpoint-container">
+              <a class="api-endpoint" href="#markup_method_3">
+                GET /v1/markup/:markupId
+              </a>
+            </span>
+          </li>
+          <li>
+            <span class="api-endpoint-container">
+              <a class="api-endpoint" href="#markup_method_4">
+                UPDATE /v1/markup/:markupId
+              </a>
+            </span>
+          </li>
+          <li>
+            <span class="api-endpoint-container">
+              <a class="api-endpoint" href="#markup_method_5">
+                DELETE /v1/markup/:markupId
+              </a>
+            </span>
+          </li>
+        </ul>
+      </div>
+      <div id="resources">
+        <div class="resource">
+          <!-- Projects -->
+          <div class="resource_methods">
+            <a id="project_method_1"></a>
+            <h2 class="api-name"></h2>
+            <h2 class="api-url blue">GET /v1/projects</h2>
+            <p class="description">
+              <strong>Description:</strong>
+              Attempts to get all of the project records in the database.
+            </p>
+            <strong>Access:</strong>
+            FREE
+            <br />
+            <strong>Return:</strong>
+            [JSON] - Returns an array of all project records.
+            <br />
+          </div>
+          <div class="resource_methods">
+            <a id="project_method_2"></a>
+            <h2 class="api-name"></h2>
+            <h2 class="api-url blue">POST /v1/project</h2>
+            <p class="description">
+              <strong>Description:</strong>
+              Attempts to create a new project record in the projects table.
+            </p>
+            <strong>Access:</strong>
+            FREE
+            <br />
+            <strong>Return:</strong>
+            JSON - Returns a project record for the newly created project.
+            <br />
+            <strong>Parameters:</strong>
+            <ul class="parameters">
+              <li><b>name</b> : string - The name of the new project.</li>
+            </ul>
+          </div>
+          <!-- Versions -->
+          <div class="resource_methods">
+            <a id="version_method_1"></a>
+            <h2 class="api-name"></h2>
+            <h2 class="api-url blue">GET /v1/versions</h2>
+            <p class="description">
+              <strong>Description:</strong>
+              Attempts to get all of the version records for a specifc
+              porjectId.
+            </p>
+            <strong>Access:</strong>
+            FREE
+            <br />
+            <strong>Return:</strong>
+            [JSON] - Returns an array of all version records.
+            <br />
+            <strong>Parameters:</strong>
+            <ul class="parameters">
+              <li>
+                <b>project_id</b> : int - The projectId to filter the versions
+                by.<br />
+              </li>
+            </ul>
+          </div>
+          <div class="resource_methods">
+            <a id="version_method_2"></a>
+            <h2 class="api-name"></h2>
+            <h2 class="api-url blue">POST /v1/version</h2>
+            <p class="description">
+              <strong>Description:</strong>
+              Attempts to create a new version record in the versions table.
+            </p>
+            <strong>Access:</strong>
+            FREE
+            <br />
+            <strong>Return:</strong>
+            JSON - Returns a version record for the newly created version.
+            <br />
+            <strong>Parameters:</strong>
+            <ul class="parameters">
+              <li>
+                <b>project_id</b> : string - The project_id of the project the
+                version belongs to.
+              </li>
+              <li><b>version</b> : string - The version number.</li>
+            </ul>
+          </div>
+          <!-- Markups -->
+          <div class="resource_methods">
+            <a id="markup_method_1"></a>
+            <h2 class="api-name"></h2>
+            <h2 class="api-url blue">POST /v1/markups</h2>
+            <p class="description">
+              <strong>Description:</strong>
+              Attempts to get all of the markups for the specified versions.<br />
+            </p>
+            <strong>Access:</strong>
+            FREE
+            <br />
+            <strong>Return:</strong>
+            [JSON] - Returns an array of markup records
+            <br />
+            <strong>Parameters:</strong>
+            <ul class="parameters">
+              <li>
+                <b>version</b> : string - The version number of the records to
+                return. <br />
+              </li>
+            </ul>
+          </div>
+          <div class="resource_methods">
+            <a id="markup_method_2"></a>
+            <h2 class="api-name"></h2>
+            <h2 class="api-url blue">POST /v1/markup</h2>
+            <p class="description">
+              <strong>Description:</strong>
+              Attempts to create a new markup record.
+            </p>
+            <strong>Access:</strong>
+            FREE
+            <br />
+            <strong>Return:</strong>
+            JSON - Returns a markup record for the newly created markup
+            <br />
+            <strong>Parameters:</strong>
+            <ul class="parameters">
+              <li>
+                <b>markup_id</b> : string - An UUID to uniquely identify the
+                markup
+              </li>
+              <li>
+                <b>version_id</b> : int - The version_id this markup will belong
+                to.
+              </li>
+              <li>
+                <b>type</b> : string - The name of the type of data to be stored
+                in data.
+              </li>
+              <li>
+                <b>data</b> : string - A serialized JSON blob that will allow
+                recreation of the class based on type.
+              </li>
+              <li>
+                <b>creator</b> : string - The name of the creator of the markup.
+              </li>
+              <li>
+                <b>assigned</b> : string - The name of the person the markup is
+                assigned to.
+              </li>
+              <li>
+                <b>location</b> : string - The serialized Vector3 of the markups
+                location to be used for dashboarding.
+              </li>
+              <li><b>status</b> : string - The status of the Markup.</li>
+            </ul>
+          </div>
+          <div class="resource_methods">
+            <a id="markup_method_3"></a>
+            <h2 class="api-name"></h2>
+            <h2 class="api-url blue">GET /v1/markup/:markupId</h2>
+            <p class="description">
+              <strong>Description:</strong>
+              Attempts to return a specified markup record.
+            </p>
+            <strong>Access:</strong>
+            FREE
+            <br />
+            <strong>Return:</strong>
+            JSON - Returns the record for the markup specified
+            <br />
+          </div>
+          <div class="resource_methods">
+            <a id="markup_method_4"></a>
+            <h2 class="api-name"></h2>
+            <h2 class="api-url blue">UPDATE /v1/markup/:markupId</h2>
+            <p class="description">
+              <strong>Description:</strong>
+              Attempts to update the specified markup record.
+            </p>
+            <strong>Access:</strong>
+            FREE
+            <br />
+            <strong>Return:</strong>
+            JSON - Returns the record of the updated markup.
+            <br />
+            <strong>Parameters:</strong>
+            <ul class="parameters">
+              <li>
+                <b>version_id</b> : int - The version_id this markup will belong
+                to.
+              </li>
+              <li>
+                <b>type</b> : string - The name of the type of data to be stored
+                in data.
+              </li>
+              <li>
+                <b>data</b> : string - A serialized JSON blob that will allow
+                recreation of the class based on type.
+              </li>
+              <li>
+                <b>creator</b> : string - The name of the creator of the markup.
+              </li>
+              <li>
+                <b>assigned</b> : string - The name of the person assigned to
+                the markup.
+              </li>
+              <li>
+                <b>location</b> : string - The serialized Vector3 of the markups
+                location to be used for dashboarding
+              </li>
+              <li><b>status</b> : string - The status of the markup.</li>
+            </ul>
+          </div>
+          <div class="resource_methods">
+            <a id="markup_method_5"></a>
+            <h2 class="api-name"></h2>
+            <h2 class="api-url blue">DELETE /v1/markup/:markupId</h2>
+            <p class="description">
+              <strong>Description:</strong>
+              Attempts to delete the specified markup record<br />
+            </p>
+            <strong>Access:</strong>
+            FREE
+            <br />
+            <strong>Return:</strong>
+            string - The markup has been deleted
+            <br />
+          </div>
+        </div>
+        <div class="footer-spacing"></div>
+      </div>
+    </div>
+  </body>
+</html>
